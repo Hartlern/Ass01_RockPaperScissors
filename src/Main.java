@@ -10,112 +10,103 @@ public class Main
         String player2;
         String menu = "Player 1:Enter R for Rock, P for Paper, or S for Scissors.";
 
-
         do
+        {
+            System.out.println( menu );
+            if( scan.hasNext() )
             {
-                System.out.println(menu);
-                if( scan.hasNext() )
+                menuChoice = scan.next();
+                scan.nextLine();
+
+                if( menuChoice.equalsIgnoreCase( "R" ) )
                 {
-                    menuChoice = scan.next();
+                    System.out.println( "Player 2:Enter R for Rock, P for Paper, or S for Scissors." );
+                    player2 = scan.next();
                     scan.nextLine();
-
-                    if( menuChoice.equalsIgnoreCase( "R" ) )
+                    if( player2.equalsIgnoreCase( "R" ) )
                     {
-                        System.out.println("Player 2:Enter R for Rock, P for Paper, or S for Scissors.");
-                        player2 = scan.next();
-                        scan.nextLine();
-                        if( player2.equalsIgnoreCase( "R" ) )
-                        {
-                            System.out.println("Its a Tie!");
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-                        }
-                        else if( player2.equalsIgnoreCase( "P" ) )
-                        {
-                            System.out.println("Player 2 wins" );
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-
-                        }
-                        else if( player2.equalsIgnoreCase( "S" ) )
-                        {
-                            System.out.println( "Player 1 wins" );
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-                        }
-                        else
-                        {
-                            System.out.println( "ERROR\nYou entered " + player2 + "\nYou must choose R,P, or C" );
-                        }
+                        System.out.println( "Rock vs Rock it’s a Tie!");
                     }
-                    else if( menuChoice.equalsIgnoreCase( "P" ) )
+                    else if( player2.equalsIgnoreCase( "P" ) )
                     {
-                        System.out.println("Player 2:Enter R for Rock, P for Paper, or S for Scissors.");
-                        player2 = scan.next();
-                        scan.nextLine();
-                        if( player2.equalsIgnoreCase( "R" ) )
-                        {
-                            System.out.println("Player 1 wins");
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-                        }
-                        else if( player2.equalsIgnoreCase( "P" ) )
-                        {
-                            System.out.println("Its a tie!" );
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-
-                        }
-                        else if( player2.equalsIgnoreCase( "S" ) )
-                        {
-                            System.out.println( "Player 2 wins" );
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-                        }
-                        else
-                        {
-                            System.out.println( "ERROR\nYou entered " + player2 + "\nYou must choose R,P, or C" );
-                        }
-
+                        System.out.println( "Paper covers Rock, player 2 wins" );
                     }
-                    else if( menuChoice.equalsIgnoreCase( "S" ) )
+                    else if( player2.equalsIgnoreCase( "S" ) )
                     {
-                        System.out.println("Player 2:Enter R for Rock, P for Paper, or S for Scissors.");
-                        player2 = scan.next();
-                        scan.nextLine();
-                        if( player2.equalsIgnoreCase( "R" ) )
-                        {
-                            System.out.println("Player 2 wins");
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-                        }
-                        else if( player2.equalsIgnoreCase( "P" ) )
-                        {
-                            System.out.println("Player 1 wins" );
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-
-                        }
-                        else if( player2.equalsIgnoreCase( "S" ) )
-                        {
-                            System.out.println( "Its a tie" );
-                            System.out.println("Want to play again [Y/N]?");
-                            declareEnd = scan.next();
-                        }
-                        else
-                        {
-                            System.out.println( "ERROR\nYou entered " + player2 + "\nYou must choose R,P, or C" );
-                        }
+                        System.out.println( "Rock breaks Scissors, player 1 wins" );
                     }
                     else
                     {
-                        System.out.println( "ERROR\nYou entered " + menuChoice + "\nYou must choose R,D, or I" );
+                        System.out.println( "ERROR\nYou entered " + player2 + "\nYou must choose R,P, or S" );
                     }
                 }
+                else if( menuChoice.equalsIgnoreCase( "P" ) )
+                {
+                    System.out.println( "Player 2:Enter R for Rock, P for Paper, or S for Scissors." );
+                    player2 = scan.next();
+                    scan.nextLine();
+                    if( player2.equalsIgnoreCase( "R" ) )
+                    {
+                        System.out.println( "Paper covers Rock, player 1 wins" );
+                    }
+                    else if( player2.equalsIgnoreCase( "P" ) )
+                    {
+                        System.out.println( "Paper vs Paper. it’s a Tie!");
+                    }
+                    else if( player2.equalsIgnoreCase( "S" ) )
+                    {
+                        System.out.println( "Scissors cuts Paper, player 2 wins" );
+                    }
+                    else
+                    {
+                        System.out.println( "ERROR\nYou entered " + player2 + "\nYou must choose R,P, or S" );
+                    }
 
+                }
+                else if( menuChoice.equalsIgnoreCase( "S" ) )
+                {
+                    System.out.println( "Player 2:Enter R for Rock, P for Paper, or S for Scissors." );
+                    player2 = scan.next();
+                    scan.nextLine();
+                    if( player2.equalsIgnoreCase( "R" ) )
+                    {
+                        System.out.println( "Rock breaks Scissors, player 2 wins" );
+                    }
+                    else if( player2.equalsIgnoreCase( "P" ) )
+                    {
+                        System.out.println( "Scissors cuts Paper, player 1 wins" );
+                    }
+                    else if( player2.equalsIgnoreCase( "S" ) )
+                    {
+                        System.out.println( "Scissor vs Scissor. it’s a Tie!");
+                    }
+                    else
+                    {
+                        System.out.println( "ERROR\nYou entered " + player2 + "\nYou must choose R,P, or S" );
+                    }
+                }
+                else
+                {
+                    System.out.println( "ERROR\nYou entered " + menuChoice + "\nYou must choose R,P, or S" );
+                }
             }
-            while(declareEnd.equalsIgnoreCase( "Y" ));
-                //quits prog
+            System.out.println( "Want to play again [Y/N]?" );
+            declareEnd = scan.next();
+            if( declareEnd.equalsIgnoreCase( "Y" ) )
+            {
+
+            } else if( declareEnd.equalsIgnoreCase( "N" ) )
+            {
+
+            } else
+            {
+                System.out.println( "ERROR\nYou entered " + declareEnd + "\nYou must choose Y or N" );
+                declareEnd = scan.next();
+            }
+        }
+        while( declareEnd.equalsIgnoreCase( "Y" ) );
+        //quits prog
+
     }
 }
 
